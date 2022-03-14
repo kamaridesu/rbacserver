@@ -1,0 +1,1 @@
+export { ResourcePermissionsArgs } from "./ResourcePermissionsArgs";

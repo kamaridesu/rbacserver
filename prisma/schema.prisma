@@ -16,4 +16,39 @@ datasource db {
 model User {
   id  String  @id @default(uuid())
   name String @unique 
+  posts Post[]
+}
+
+model Post {
+  id  String  @id @default(uuid())
+  name String @unique
+  author   User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  authorId String
+}
+
+model Role {
+  id String @id @default(uuid())
+  name String @unique
+}
+
+model Resource {
+  name String @id @unique
+  permissions PermissionSet[]
+}
+
+model Permission {
+  name String @id @unique
+  resources PermissionSet[]
+}
+
+model PermissionSet {
+  resource  Resource  @relation(fields: [resourceId], references: [name], onDelete: Cascade)
+  resourceId  String
+  permission  Permission @relation(fields: [permissionId], references: [name], onDelete: Cascade)
+  permissionId String
+  isallowed Boolean
+  createdAt DateTime @default(now())
+  createdBy String
+
+  @@id([resourceId, permissionId])
 }

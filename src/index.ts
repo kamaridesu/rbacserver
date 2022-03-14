@@ -38,7 +38,7 @@ async function main() {
       `🚀  Server ready at {
         express: https://${ip.address()}:${PORT}, 
         graphql: https://${ip.address()}:${PORT}/graphql
-        graphql: http://${ip.address()}:${PORT}/graphql
+        graphql: http://localhost:${PORT}/graphql
       }`
     );
   });
