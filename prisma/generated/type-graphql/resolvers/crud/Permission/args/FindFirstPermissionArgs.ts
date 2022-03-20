@@ -35,5 +35,5 @@ export class FindFirstPermissionArgs {
   @TypeGraphQL.Field(_type => [PermissionScalarFieldEnum], {
     nullable: true
   })
-  distinct?: "name"[] | undefined;
+  distinct?: Array<"id" | "name" | "roleId" | "resourceId"> | undefined;
 }

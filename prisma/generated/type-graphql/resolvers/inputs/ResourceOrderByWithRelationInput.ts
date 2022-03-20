@@ -2,7 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { PermissionSetOrderByRelationAggregateInput } from "../inputs/PermissionSetOrderByRelationAggregateInput";
+import { PermissionOrderByRelationAggregateInput } from "../inputs/PermissionOrderByRelationAggregateInput";
 import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("ResourceOrderByWithRelationInput", {
@@ -14,8 +14,8 @@ export class ResourceOrderByWithRelationInput {
   })
   name?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field(_type => PermissionSetOrderByRelationAggregateInput, {
+  @TypeGraphQL.Field(_type => PermissionOrderByRelationAggregateInput, {
     nullable: true
   })
-  permissions?: PermissionSetOrderByRelationAggregateInput | undefined;
+  permissions?: PermissionOrderByRelationAggregateInput | undefined;
 }

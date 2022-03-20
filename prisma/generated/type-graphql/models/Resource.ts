@@ -2,7 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../scalars";
-import { PermissionSet } from "../models/PermissionSet";
+import { Permission } from "../models/Permission";
 import { ResourceCount } from "../resolvers/outputs/ResourceCount";
 
 @TypeGraphQL.ObjectType("Resource", {
@@ -14,7 +14,7 @@ export class Resource {
   })
   name!: string;
 
-  permissions?: PermissionSet[];
+  permissions?: Permission[];
 
   @TypeGraphQL.Field(_type => ResourceCount, {
     nullable: true

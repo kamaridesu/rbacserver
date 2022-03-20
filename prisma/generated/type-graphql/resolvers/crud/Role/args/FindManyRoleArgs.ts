@@ -35,5 +35,5 @@ export class FindManyRoleArgs {
   @TypeGraphQL.Field(_type => [RoleScalarFieldEnum], {
     nullable: true
   })
-  distinct?: Array<"id" | "name"> | undefined;
+  distinct?: "name"[] | undefined;
 }

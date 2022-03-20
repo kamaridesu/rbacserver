@@ -2,7 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { PermissionSetUpdateManyWithoutResourceInput } from "../inputs/PermissionSetUpdateManyWithoutResourceInput";
+import { PermissionUpdateManyWithoutResourceInput } from "../inputs/PermissionUpdateManyWithoutResourceInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 
 @TypeGraphQL.InputType("ResourceUpdateInput", {
@@ -14,8 +14,8 @@ export class ResourceUpdateInput {
   })
   name?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => PermissionSetUpdateManyWithoutResourceInput, {
+  @TypeGraphQL.Field(_type => PermissionUpdateManyWithoutResourceInput, {
     nullable: true
   })
-  permissions?: PermissionSetUpdateManyWithoutResourceInput | undefined;
+  permissions?: PermissionUpdateManyWithoutResourceInput | undefined;
 }

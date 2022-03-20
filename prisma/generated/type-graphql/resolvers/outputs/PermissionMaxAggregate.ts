@@ -10,5 +10,20 @@ export class PermissionMaxAggregate {
   @TypeGraphQL.Field(_type => String, {
     nullable: true
   })
+  id!: string | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
   name!: string | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  roleId!: string | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  resourceId!: string | null;
 }

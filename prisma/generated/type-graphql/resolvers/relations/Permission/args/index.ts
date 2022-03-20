@@ -1,1 +1,0 @@
-export { PermissionResourcesArgs } from "./PermissionResourcesArgs";

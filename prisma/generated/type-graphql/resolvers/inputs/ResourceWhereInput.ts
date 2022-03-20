@@ -2,7 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { PermissionSetListRelationFilter } from "../inputs/PermissionSetListRelationFilter";
+import { PermissionListRelationFilter } from "../inputs/PermissionListRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
 
 @TypeGraphQL.InputType("ResourceWhereInput", {
@@ -29,8 +29,8 @@ export class ResourceWhereInput {
   })
   name?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => PermissionSetListRelationFilter, {
+  @TypeGraphQL.Field(_type => PermissionListRelationFilter, {
     nullable: true
   })
-  permissions?: PermissionSetListRelationFilter | undefined;
+  permissions?: PermissionListRelationFilter | undefined;
 }

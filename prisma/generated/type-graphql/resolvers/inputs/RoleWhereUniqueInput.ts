@@ -10,10 +10,5 @@ export class RoleWhereUniqueInput {
   @TypeGraphQL.Field(_type => String, {
     nullable: true
   })
-  id?: string | undefined;
-
-  @TypeGraphQL.Field(_type => String, {
-    nullable: true
-  })
   name?: string | undefined;
 }

@@ -8,7 +8,22 @@ import { DecimalJSScalar } from "../../scalars";
 })
 export class PermissionCreateManyInput {
   @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  id?: string | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
   name!: string;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  roleId?: string | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  resourceId?: string | undefined;
 }

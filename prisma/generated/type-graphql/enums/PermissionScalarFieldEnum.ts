@@ -1,7 +1,10 @@
 import * as TypeGraphQL from "type-graphql";
 
 export enum PermissionScalarFieldEnum {
-  name = "name"
+  id = "id",
+  name = "name",
+  roleId = "roleId",
+  resourceId = "resourceId"
 }
 TypeGraphQL.registerEnumType(PermissionScalarFieldEnum, {
   name: "PermissionScalarFieldEnum",

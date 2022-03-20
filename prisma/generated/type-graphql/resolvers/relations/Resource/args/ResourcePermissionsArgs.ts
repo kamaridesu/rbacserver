@@ -1,26 +1,26 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { PermissionSetOrderByWithRelationInput } from "../../../inputs/PermissionSetOrderByWithRelationInput";
-import { PermissionSetWhereInput } from "../../../inputs/PermissionSetWhereInput";
-import { PermissionSetWhereUniqueInput } from "../../../inputs/PermissionSetWhereUniqueInput";
-import { PermissionSetScalarFieldEnum } from "../../../../enums/PermissionSetScalarFieldEnum";
+import { PermissionOrderByWithRelationInput } from "../../../inputs/PermissionOrderByWithRelationInput";
+import { PermissionWhereInput } from "../../../inputs/PermissionWhereInput";
+import { PermissionWhereUniqueInput } from "../../../inputs/PermissionWhereUniqueInput";
+import { PermissionScalarFieldEnum } from "../../../../enums/PermissionScalarFieldEnum";
 
 @TypeGraphQL.ArgsType()
 export class ResourcePermissionsArgs {
-  @TypeGraphQL.Field(_type => PermissionSetWhereInput, {
+  @TypeGraphQL.Field(_type => PermissionWhereInput, {
     nullable: true
   })
-  where?: PermissionSetWhereInput | undefined;
+  where?: PermissionWhereInput | undefined;
 
-  @TypeGraphQL.Field(_type => [PermissionSetOrderByWithRelationInput], {
+  @TypeGraphQL.Field(_type => [PermissionOrderByWithRelationInput], {
     nullable: true
   })
-  orderBy?: PermissionSetOrderByWithRelationInput[] | undefined;
+  orderBy?: PermissionOrderByWithRelationInput[] | undefined;
 
-  @TypeGraphQL.Field(_type => PermissionSetWhereUniqueInput, {
+  @TypeGraphQL.Field(_type => PermissionWhereUniqueInput, {
     nullable: true
   })
-  cursor?: PermissionSetWhereUniqueInput | undefined;
+  cursor?: PermissionWhereUniqueInput | undefined;
 
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
     nullable: true
@@ -32,8 +32,8 @@ export class ResourcePermissionsArgs {
   })
   skip?: number | undefined;
 
-  @TypeGraphQL.Field(_type => [PermissionSetScalarFieldEnum], {
+  @TypeGraphQL.Field(_type => [PermissionScalarFieldEnum], {
     nullable: true
   })
-  distinct?: Array<"resourceId" | "permissionId" | "isallowed" | "createdAt" | "createdBy"> | undefined;
+  distinct?: Array<"id" | "name" | "roleId" | "resourceId"> | undefined;
 }

@@ -20,6 +20,11 @@ export class UserGroupBy {
   })
   name!: string;
 
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  roleId!: string | null;
+
   @TypeGraphQL.Field(_type => UserCountAggregate, {
     nullable: true
   })

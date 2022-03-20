@@ -20,7 +20,7 @@ export class GroupByPermissionArgs {
   @TypeGraphQL.Field(_type => [PermissionScalarFieldEnum], {
     nullable: false
   })
-  by!: "name"[];
+  by!: Array<"id" | "name" | "roleId" | "resourceId">;
 
   @TypeGraphQL.Field(_type => PermissionScalarWhereWithAggregatesInput, {
     nullable: true

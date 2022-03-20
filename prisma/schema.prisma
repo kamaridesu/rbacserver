@@ -15,8 +15,10 @@ datasource db {
 
 model User {
   id  String  @id @default(uuid())
-  name String @unique 
+  name String @unique
   posts Post[]
+  role   Role? @relation(fields: [roleId], references: [name], onDelete: Cascade)
+  roleId String?
 }
 
 model Post {
@@ -27,28 +29,25 @@ model Post {
 }
 
 model Role {
-  id String @id @default(uuid())
-  name String @unique
+  name String @id @unique
+  permissions Permission[]
+  users User[]
 }
 
 model Resource {
   name String @id @unique
-  permissions PermissionSet[]
+  permissions Permission[]
 }
 
 model Permission {
-  name String @id @unique
-  resources PermissionSet[]
+  id String @id @default(uuid())
+  name String
+  role   Role? @relation(fields: [roleId], references: [name], onDelete: Cascade)
+  roleId String?
+  resource   Resource? @relation(fields: [resourceId], references: [name], onDelete: Cascade)
+  resourceId String?
+
+  @@unique([name, roleId, resourceId]) 
 }
 
-model PermissionSet {
-  resource  Resource  @relation(fields: [resourceId], references: [name], onDelete: Cascade)
-  resourceId  String
-  permission  Permission @relation(fields: [permissionId], references: [name], onDelete: Cascade)
-  permissionId String
-  isallowed Boolean
-  createdAt DateTime @default(now())
-  createdBy String
 
-  @@id([resourceId, permissionId])
-}

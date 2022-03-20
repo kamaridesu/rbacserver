@@ -2,6 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
+import { RoleCreateNestedOneWithoutUsersInput } from "../inputs/RoleCreateNestedOneWithoutUsersInput";
 
 @TypeGraphQL.InputType("UserCreateWithoutPostsInput", {
   isAbstract: true
@@ -16,4 +17,9 @@ export class UserCreateWithoutPostsInput {
     nullable: false
   })
   name!: string;
+
+  @TypeGraphQL.Field(_type => RoleCreateNestedOneWithoutUsersInput, {
+    nullable: true
+  })
+  role?: RoleCreateNestedOneWithoutUsersInput | undefined;
 }

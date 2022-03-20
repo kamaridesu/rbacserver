@@ -11,5 +11,10 @@ export class PermissionUpdateManyMutationInput {
   @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
     nullable: true
   })
+  id?: StringFieldUpdateOperationsInput | undefined;
+
+  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+    nullable: true
+  })
   name?: StringFieldUpdateOperationsInput | undefined;
 }

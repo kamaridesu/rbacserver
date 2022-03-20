@@ -20,7 +20,7 @@ export class GroupByRoleArgs {
   @TypeGraphQL.Field(_type => [RoleScalarFieldEnum], {
     nullable: false
   })
-  by!: Array<"id" | "name">;
+  by!: "name"[];
 
   @TypeGraphQL.Field(_type => RoleScalarWhereWithAggregatesInput, {
     nullable: true

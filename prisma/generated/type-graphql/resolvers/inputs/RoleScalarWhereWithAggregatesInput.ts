@@ -26,10 +26,5 @@ export class RoleScalarWhereWithAggregatesInput {
   @TypeGraphQL.Field(_type => StringWithAggregatesFilter, {
     nullable: true
   })
-  id?: StringWithAggregatesFilter | undefined;
-
-  @TypeGraphQL.Field(_type => StringWithAggregatesFilter, {
-    nullable: true
-  })
   name?: StringWithAggregatesFilter | undefined;
 }

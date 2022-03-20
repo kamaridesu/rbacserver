@@ -2,7 +2,8 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { PermissionSetUpdateManyWithoutPermissionInput } from "../inputs/PermissionSetUpdateManyWithoutPermissionInput";
+import { ResourceUpdateOneWithoutPermissionsInput } from "../inputs/ResourceUpdateOneWithoutPermissionsInput";
+import { RoleUpdateOneWithoutPermissionsInput } from "../inputs/RoleUpdateOneWithoutPermissionsInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 
 @TypeGraphQL.InputType("PermissionUpdateInput", {
@@ -12,10 +13,20 @@ export class PermissionUpdateInput {
   @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
     nullable: true
   })
-  name?: StringFieldUpdateOperationsInput | undefined;
+  id?: StringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => PermissionSetUpdateManyWithoutPermissionInput, {
+  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
     nullable: true
   })
-  resources?: PermissionSetUpdateManyWithoutPermissionInput | undefined;
+  name?: StringFieldUpdateOperationsInput | undefined;
+
+  @TypeGraphQL.Field(_type => RoleUpdateOneWithoutPermissionsInput, {
+    nullable: true
+  })
+  role?: RoleUpdateOneWithoutPermissionsInput | undefined;
+
+  @TypeGraphQL.Field(_type => ResourceUpdateOneWithoutPermissionsInput, {
+    nullable: true
+  })
+  resource?: ResourceUpdateOneWithoutPermissionsInput | undefined;
 }

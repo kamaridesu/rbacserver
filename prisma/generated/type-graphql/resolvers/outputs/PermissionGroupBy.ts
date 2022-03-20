@@ -13,7 +13,22 @@ export class PermissionGroupBy {
   @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
+  id!: string;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: false
+  })
   name!: string;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  roleId!: string | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  resourceId!: string | null;
 
   @TypeGraphQL.Field(_type => PermissionCountAggregate, {
     nullable: true

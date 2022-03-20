@@ -2,7 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { PermissionSetCreateNestedManyWithoutResourceInput } from "../inputs/PermissionSetCreateNestedManyWithoutResourceInput";
+import { PermissionCreateNestedManyWithoutResourceInput } from "../inputs/PermissionCreateNestedManyWithoutResourceInput";
 
 @TypeGraphQL.InputType("ResourceCreateInput", {
   isAbstract: true
@@ -13,8 +13,8 @@ export class ResourceCreateInput {
   })
   name!: string;
 
-  @TypeGraphQL.Field(_type => PermissionSetCreateNestedManyWithoutResourceInput, {
+  @TypeGraphQL.Field(_type => PermissionCreateNestedManyWithoutResourceInput, {
     nullable: true
   })
-  permissions?: PermissionSetCreateNestedManyWithoutResourceInput | undefined;
+  permissions?: PermissionCreateNestedManyWithoutResourceInput | undefined;
 }

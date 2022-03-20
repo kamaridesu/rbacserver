@@ -1,19 +1,30 @@
 import * as TypeGraphQL from "type-graphql";
 import { Permission } from "../../../models/Permission";
-import { PermissionSet } from "../../../models/PermissionSet";
-import { PermissionResourcesArgs } from "./args/PermissionResourcesArgs";
+import { Resource } from "../../../models/Resource";
+import { Role } from "../../../models/Role";
 import { transformFields, getPrismaFromContext, transformCountFieldIntoSelectRelationsCount } from "../../../helpers";
 
 @TypeGraphQL.Resolver(_of => Permission)
 export class PermissionRelationsResolver {
-  @TypeGraphQL.FieldResolver(_type => [PermissionSet], {
-    nullable: false
+  @TypeGraphQL.FieldResolver(_type => Role, {
+    nullable: true
   })
-  async resources(@TypeGraphQL.Root() permission: Permission, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Args() args: PermissionResourcesArgs): Promise<PermissionSet[]> {
+  async role(@TypeGraphQL.Root() permission: Permission, @TypeGraphQL.Ctx() ctx: any): Promise<Role | null> {
     return getPrismaFromContext(ctx).permission.findUnique({
       where: {
-        name: permission.name,
+        id: permission.id,
       },
-    }).resources(args);
+    }).role({});
+  }
+
+  @TypeGraphQL.FieldResolver(_type => Resource, {
+    nullable: true
+  })
+  async resource(@TypeGraphQL.Root() permission: Permission, @TypeGraphQL.Ctx() ctx: any): Promise<Resource | null> {
+    return getPrismaFromContext(ctx).permission.findUnique({
+      where: {
+        id: permission.id,
+      },
+    }).resource({});
   }
 }

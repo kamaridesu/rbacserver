@@ -13,11 +13,6 @@ export class RoleGroupBy {
   @TypeGraphQL.Field(_type => String, {
     nullable: false
   })
-  id!: string;
-
-  @TypeGraphQL.Field(_type => String, {
-    nullable: false
-  })
   name!: string;
 
   @TypeGraphQL.Field(_type => RoleCountAggregate, {

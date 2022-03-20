@@ -16,4 +16,9 @@ export class UserCreateManyInput {
     nullable: false
   })
   name!: string;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  roleId?: string | undefined;
 }
